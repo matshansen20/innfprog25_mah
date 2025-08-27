@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> er du kvalifisert til å ta førerkort?</h2>
+    <p id="carmsg"></p>
+    <h2> kan spilleren åpne døren</h2>
+    <p id="doormsg"></p>
+    <h2> kan jeg pensjonere meg snart?</h2>
+    <p id="retire"></p>
+
+    <script>
+const age = 21
+const tg_passed = true
+
+//if-test 
+if(age >= 18 && tg_passed == true) {
+    document.getElementById("carmsg").innerHTML = "Ja"
+} else {
+
+} document.getElementById("carmsg").innerHTML = "Nei"
+
+
+//Sjekk om dør er låst, evuentuelt om spiller har nøkkel i sekken
+const door_locked = true
+const backpack = "key"
+
+let utskrift = document.getElementById("doormsg")
+
+if (door_locked === false) {
+    utskrift.innerHTML = "ja"
+}else{
+    if (backpack === "key") {
+        utskrift.innerHTML = "ja"
+    } else {
+        utskrift.innerHTML = "nei"
+    }
+}
+
+
+let retiremsg = document.getElementById("retire")
+
+//sjekk av mulig pensjonsalder
+if (age >= 62 && age < 67) {
+    retiremsg.innerHTML =  " du kan gå av med AFP."
+     } else if (age >= 67) {
+    retiremsg.innerHTML = " du kan gå av med full pensjons"
+     } else {
+        retiremsg.innerHTML = `du kan gå av med AFP om ${62 -age} år, og full pensjon om ${67 -age} år.`
+        
+     }
+
+
+
+
+    </script>
+        
+
+
+
+    
+</body>
+</html>
