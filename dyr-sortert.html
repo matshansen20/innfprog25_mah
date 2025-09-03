@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array øvingsoppgave 3</title>
+</head>
+<body>
+    <p id ="antall-dyr"></p>
+    
+    <script>
+
+      const dyr = ["hund", "katt", "fisk", "hamster", "papegøye", "kanin", "skilpadde" , "slange", "marsvin", "geit"] 
+
+      
+      dyr.push("Rotte", "Ekorn")
+
+      dyr.sort()
+
+      const antallDyr = `det er ${dyr.length} dyr i denne listen. ${dyr.join(", ")}`
+
+      document.getElementById("antall-dyr").innerHTML = `Antall dyr: ${antallDyr}.`
+
+      
+
+      console.log(antallDyr)
+
+
+    </script>
+
+</body>
+</html>
