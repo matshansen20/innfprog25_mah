@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array og metoder</h1>
+    <p>dette juksearket fungerer best med konsollen åpen</p>
+    
+    <script>
+
+
+const moviearray = ["lange flate baller","Star Wars episode 1: phantom menace", "titanic", "nobody", "the notebook"]
+
+
+
+//A-Å
+
+
+//Sortere og reversere med en enkelt kodelinje
+moviearray.sort().reverse()
+
+
+//A-Å
+
+
+
+moviearray.push("Blink Twice")
+moviearray.reverse()
+moviearray.splice(3,1)
+
+const movieexist = moviearray.includes("Tetris")
+console.log("Finnes Tetris", movieexist)
+
+
+console.log(moviearray)
+// Tall sortering
+const numbersarray = [ 32,31,6,4,104,111,1000]
+
+// Tall sortert
+numbersarray.sort( function(a,b){return a-b} )
+
+// Tall sortert og reservert
+numbersarray.sort( function(a,b){return b-a} )
+
+console.log(numbersarray)
+
+document.getElementById("moviecount").innerHTML = moviearray.length
+const index = 2
+document.getElementById("movietitle").innerHTML = moviearray[2]
+
+
+
+
+
+
+
+
+
+
+    </script>
+        
+</body>
+</html>
