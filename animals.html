@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Array øvingsoppgave 2</title>
+</head>
+<body>
+    <p id="setning"></p>
+    <script> 
+
+const dyr = ["hund", "katt", "fisk", "hamster", "papegøye", "kanin", "skilpadde" , "slange", "marsvin", "geit"] 
+    
+const animals = ["cat", "dog", "turtle", "horse", "hedgehog", "peacock", "blue whale", "snake" , "frog", "pickachu"]
+
+const dyrIndex1 = 4
+const dyrIndex2 = 7
+
+const tekst = `${dyr [dyrIndex1]} er et dyr. det heter ${animals [dyrIndex1]} på engelsk. ${dyr [dyrIndex2]} er også et dyr, som heter ${animals [dyrIndex2]} på engelsk.`
+
+console.log(tekst)
+
+document.getElementById("setning"). innerHTML = tekst
+
+    </script>
+</body>
+</html>
