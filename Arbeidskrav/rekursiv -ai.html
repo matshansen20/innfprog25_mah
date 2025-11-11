@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekursive funksjoner i JavaScript</title>
+</head>
+<body>
+    <h1>Rekursiv utskrift av tall </h1>
+    <button onclick="start()">Start ny liste</button>
+
+    <ul id="numberList"></ul>
+
+    <script>
+        /*
+            En rekursiv funksjon kaller på seg selv til en bestemt 
+            stopp-betingelse er oppfylt.
+            Kilde: https://snl.no/rekursjon_-_programmering
+        */
+
+        const stoppTall = [4, 7]; // Tall som stopper rekursjonen
+        let teller = 0; // Teller antall kall
+
+        function skrivTall() {
+            teller++;
+
+            let tall = Math.floor(Math.random() * 9) + 1;
+            let liste = document.getElementById("numberList");
+
+            let punkt = document.createElement("li");
+            punkt.textContent = `Kall ${teller}: ${tall}`;
+            liste.appendChild(punkt);
+
+            if (!stoppTall.includes(tall)) {
+                // Forsinker neste kall for synlig effekt
+                setTimeout(skrivTall, 400);
+            }
+        }
+
+        function start() {
+            teller = 0;
+            document.getElementById("numberList").innerHTML = ""; // Tøm liste
+            skrivTall(); // Start rekursiv prosess
+        }
+    </script>
+</body>
+</html>
