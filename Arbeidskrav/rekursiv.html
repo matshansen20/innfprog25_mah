@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekursive funksjoner i JavaScript</title>
+</head>
+<body>
+    <h1>Rekursiv utskrift av tall</h1>
+    <ul id="numberList">
+        <li>Tall vil skrives ut her.</li>
+    </ul>
+
+    <script>
+        /*
+            Hva er en rekursiv funksjon?
+            En rekrusiv funksjon er en funksjon som kaller på seg selv som en del av sin egen definisjon. Den må deles opp i to deler for at den skal fungere riktig.
+
+            --Ditt svar her. Husk kilder-- https://snl.no/rekursjon_-_programmering
+        */
+
+        function numberSelector() {
+     
+        let tall = Math.floor(Math.random() * 9) + 1
+
+          
+            let liste = document.getElementById("numberList")
+
+         
+            let punkt = document.createElement("li")
+            punkt.textContent = tall;
+            liste.appendChild(punkt)
+
+            
+            if (tall != 4 && tall != 7) {
+                numberSelector()
+            }
+        }
+
+       
+        numberSelector()
+    
+        
+
+
+
+    </script>
+</body>
+</html>
