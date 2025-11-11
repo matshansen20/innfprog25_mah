@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passordgenerator</title>
+</head>
+<body>
+    <h1>Passordgenerator</h1>
+
+    <label>Lengde:
+        <input type="number" id="passLength" value="12" min="4" max="50">
+    </label><br>
+
+    <label><input type="checkbox" id="useLower" checked> Små bokstaver</label><br>
+    <label><input type="checkbox" id="useUpper" checked> Store bokstaver</label><br>
+    <label><input type="checkbox" id="useNumbers" checked> Tall</label><br>
+    <label><input type="checkbox" id="useSymbols"> Symboler</label><br><br>
+
+    <button onclick="genererPassord()">Generer passord</button>
+
+    <p>Ditt passord: <strong id="resultat"></strong></p>
+
+    <script>
+        
+        const småBokstaver = "abcdefghijklmnopqrstuvwxyz"
+        const storeBokstaver = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        const tall = "0123456789";
+        const symboler = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~"
+
+        function lagPassord(lengde, små, store, tallValg, symbolValg) {
+            let muligeTegn = ""
+
+            if (små) muligeTegn += småBokstaver
+            if (store) muligeTegn += storeBokstaver
+            if (tallValg) muligeTegn += tall;
+            if (symbolValg) muligeTegn += symboler
+
+            
+            if (muligeTegn.length === 0) {
+                return "Velg minst én type tegn!"
+            }
+
+            let passord = ""
+
+            
+            for (let i = 0; i < lengde; i++) {
+                let tilfeldigIndex = Math.floor(Math.random() * muligeTegn.length)
+                passord += muligeTegn[tilfeldigIndex]
+            }
+
+            return passord
+        }
+
+        function genererPassord() {
+            let lengde = parseInt(document.getElementById("passLength").value)
+
+            let brukSmå = document.getElementById("useLower").checked
+            let brukStore = document.getElementById("useUpper").checked
+            let brukTall = document.getElementById("useNumbers").checked
+            let brukSymboler = document.getElementById("useSymbols").checked
+
+            let ferdigPassord = lagPassord(lengde, brukSmå, brukStore, brukTall, brukSymboler)
+
+            document.getElementById("resultat").textContent = ferdigPassord
+        }
+    </script>
+</body>
+</html>
